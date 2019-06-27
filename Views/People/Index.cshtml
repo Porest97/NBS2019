@@ -1,0 +1,89 @@
+﻿@model IEnumerable<NBS2019.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>People</h1>
+
+<div class="row">
+    <div class="col-sm-2">
+        <a class="btn btn-success btn-sm" asp-action="Create">Create New Person</a>
+    </div>
+    <div class="col-sm-10">
+        <a class="btn btn-success btn-sm" asp-controller="Home" asp-action="People">Back To People</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumbers)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.IdentityUser.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumbers)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentityUser.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonType.PersonTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

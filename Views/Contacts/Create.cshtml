@@ -1,0 +1,83 @@
+﻿@model NBS2019.Models.HockeyContacts.Contact
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Contact</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClubId" class="control-label"></label>
+                <select asp-for="ClubId" class ="form-control" asp-items="ViewBag.ClubId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamId" class="control-label"></label>
+                <select asp-for="TeamId" class ="form-control" asp-items="ViewBag.TeamId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoleId" class="control-label"></label>
+                <select asp-for="RoleId" class ="form-control" asp-items="ViewBag.RoleId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SportId" class="control-label"></label>
+                <select asp-for="SportId" class ="form-control" asp-items="ViewBag.SportId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictId" class="control-label"></label>
+                <select asp-for="DistrictId" class ="form-control" asp-items="ViewBag.DistrictId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SeasonId" class="control-label"></label>
+                <select asp-for="SeasonId" class ="form-control" asp-items="ViewBag.SeasonId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AgeCategoryId" class="control-label"></label>
+                <select asp-for="AgeCategoryId" class ="form-control" asp-items="ViewBag.AgeCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber1" class="control-label"></label>
+                <input asp-for="PhoneNumber1" class="form-control" />
+                <span asp-validation-for="PhoneNumber1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber2" class="control-label"></label>
+                <input asp-for="PhoneNumber2" class="form-control" />
+                <span asp-validation-for="PhoneNumber2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ssn" class="control-label"></label>
+                <input asp-for="Ssn" class="form-control" />
+                <span asp-validation-for="Ssn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -14,6 +14,14 @@ namespace NBS2019.Controllers
         {
             return View();
         }
+        public IActionResult People()
+        {
+            return View();
+        }
+        public IActionResult SportContacts()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

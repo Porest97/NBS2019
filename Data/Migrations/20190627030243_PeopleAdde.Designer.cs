@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NBS2019.Data;
 
 namespace NBS2019.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190627030243_PeopleAdde")]
+    partial class PeopleAdde
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -215,189 +217,6 @@ namespace NBS2019.Data.Migrations
                     b.ToTable("Company");
                 });
 
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.AgeCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AgeCategoryName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AgeCategory");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Club", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClubName");
-
-                    b.Property<int?>("DistrictId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DistrictId");
-
-                    b.ToTable("Club");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Contact", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("AgeCategoryId");
-
-                    b.Property<int?>("ClubId");
-
-                    b.Property<int?>("DistrictId");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("PhoneNumber1");
-
-                    b.Property<string>("PhoneNumber2");
-
-                    b.Property<int?>("RoleId");
-
-                    b.Property<int?>("SeasonId");
-
-                    b.Property<int?>("SportId");
-
-                    b.Property<string>("Ssn");
-
-                    b.Property<int?>("TeamId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AgeCategoryId");
-
-                    b.HasIndex("ClubId");
-
-                    b.HasIndex("DistrictId");
-
-                    b.HasIndex("RoleId");
-
-                    b.HasIndex("SeasonId");
-
-                    b.HasIndex("SportId");
-
-                    b.HasIndex("TeamId");
-
-                    b.ToTable("Contact");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.ContactRaw", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AgeCategory");
-
-                    b.Property<string>("Club");
-
-                    b.Property<string>("District");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("PhoneNumber1");
-
-                    b.Property<string>("PhoneNumber2");
-
-                    b.Property<string>("Role");
-
-                    b.Property<string>("Season");
-
-                    b.Property<string>("Sport");
-
-                    b.Property<string>("Ssn");
-
-                    b.Property<string>("Team");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ContactRaw");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.District", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DistrictName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("District");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("RoleName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Role");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Season", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("SeasonName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Season");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Sport", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("SportName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sport");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Team", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("TeamName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Team");
-                });
-
             modelBuilder.Entity("NBS2019.Models.Person", b =>
                 {
                     b.Property<int>("Id")
@@ -495,44 +314,6 @@ namespace NBS2019.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Club", b =>
-                {
-                    b.HasOne("NBS2019.Models.HockeyContacts.District", "District")
-                        .WithMany()
-                        .HasForeignKey("DistrictId");
-                });
-
-            modelBuilder.Entity("NBS2019.Models.HockeyContacts.Contact", b =>
-                {
-                    b.HasOne("NBS2019.Models.HockeyContacts.AgeCategory", "AgeCategory")
-                        .WithMany()
-                        .HasForeignKey("AgeCategoryId");
-
-                    b.HasOne("NBS2019.Models.HockeyContacts.Club", "Club")
-                        .WithMany()
-                        .HasForeignKey("ClubId");
-
-                    b.HasOne("NBS2019.Models.HockeyContacts.District", "District")
-                        .WithMany()
-                        .HasForeignKey("DistrictId");
-
-                    b.HasOne("NBS2019.Models.HockeyContacts.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId");
-
-                    b.HasOne("NBS2019.Models.HockeyContacts.Season", "Season")
-                        .WithMany()
-                        .HasForeignKey("SeasonId");
-
-                    b.HasOne("NBS2019.Models.HockeyContacts.Sport", "Sport")
-                        .WithMany()
-                        .HasForeignKey("SportId");
-
-                    b.HasOne("NBS2019.Models.HockeyContacts.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamId");
                 });
 
             modelBuilder.Entity("NBS2019.Models.Person", b =>

@@ -4,6 +4,8 @@ namespace NBS2019.Models
 {
     public class Company
     {
+        public int Id { get; set; }
+
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
 
