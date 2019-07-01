@@ -22,6 +22,10 @@ namespace NBS2019.Controllers
         {
             return View();
         }
+        public IActionResult Companies()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

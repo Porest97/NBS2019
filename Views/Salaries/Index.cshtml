@@ -1,0 +1,95 @@
+﻿@model IEnumerable<NBS2019.Models.TestModels.Salary>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emplyee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountPaidOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePaidOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountDueToPayOut)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emplyee.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Article.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPaidOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePaidOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountDueToPayOut)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

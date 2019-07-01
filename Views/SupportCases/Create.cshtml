@@ -1,0 +1,71 @@
+﻿@model NBS2019.Models.SupportCase
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SupportCase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TimeReported" class="control-label"></label>
+                <input asp-for="TimeReported" class="form-control" />
+                <span asp-validation-for="TimeReported" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeStarted" class="control-label"></label>
+                <input asp-for="TimeStarted" class="form-control" />
+                <span asp-validation-for="TimeStarted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeFEScheduled" class="control-label"></label>
+                <input asp-for="TimeFEScheduled" class="form-control" />
+                <span asp-validation-for="TimeFEScheduled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeSolved" class="control-label"></label>
+                <input asp-for="TimeSolved" class="form-control" />
+                <span asp-validation-for="TimeSolved" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalTimeOnSite" class="control-label"></label>
+                <input asp-for="TotalTimeOnSite" class="form-control" />
+                <span asp-validation-for="TotalTimeOnSite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessCentreId" class="control-label"></label>
+                <select asp-for="BusinessCentreId" class ="form-control" asp-items="ViewBag.BusinessCentreId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId" class="control-label"></label>
+                <select asp-for="PersonId" class ="form-control" asp-items="ViewBag.PersonId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId1" class="control-label"></label>
+                <select asp-for="PersonId1" class ="form-control" asp-items="ViewBag.PersonId1"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descrition" class="control-label"></label>
+                <input asp-for="Descrition" class="form-control" />
+                <span asp-validation-for="Descrition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PurchaseOrderId" class="control-label"></label>
+                <select asp-for="PurchaseOrderId" class ="form-control" asp-items="ViewBag.PurchaseOrderId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

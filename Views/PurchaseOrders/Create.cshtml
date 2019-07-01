@@ -1,0 +1,77 @@
+﻿@model NBS2019.Models.PurchaseOrder
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PurchaseOrder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PurchaseOrderNumber" class="control-label"></label>
+                <input asp-for="PurchaseOrderNumber" class="form-control" />
+                <span asp-validation-for="PurchaseOrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessCentreId" class="control-label"></label>
+                <select asp-for="BusinessCentreId" class ="form-control" asp-items="ViewBag.BusinessCentreId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId" class="control-label"></label>
+                <select asp-for="PersonId" class ="form-control" asp-items="ViewBag.PersonId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId1" class="control-label"></label>
+                <select asp-for="PersonId1" class ="form-control" asp-items="ViewBag.PersonId1"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descrition" class="control-label"></label>
+                <input asp-for="Descrition" class="form-control" />
+                <span asp-validation-for="Descrition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeOnSite" class="control-label"></label>
+                <input asp-for="TimeOnSite" class="form-control" />
+                <span asp-validation-for="TimeOnSite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KostPerHour" class="control-label"></label>
+                <input asp-for="KostPerHour" class="form-control" />
+                <span asp-validation-for="KostPerHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalKost" class="control-label"></label>
+                <input asp-for="TotalKost" class="form-control" />
+                <span asp-validation-for="TotalKost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobbScheduled" class="control-label"></label>
+                <input asp-for="JobbScheduled" class="form-control" />
+                <span asp-validation-for="JobbScheduled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobbStarted" class="control-label"></label>
+                <input asp-for="JobbStarted" class="form-control" />
+                <span asp-validation-for="JobbStarted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobbEnded" class="control-label"></label>
+                <input asp-for="JobbEnded" class="form-control" />
+                <span asp-validation-for="JobbEnded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

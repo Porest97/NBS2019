@@ -1,0 +1,81 @@
+﻿@model NBS2019.Models.WorkReport
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WorkReport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="BusinessCentreId" class="control-label"></label>
+                <select asp-for="BusinessCentreId" class="form-control" asp-items="ViewBag.BusinessCentreId"></select>
+                <span asp-validation-for="BusinessCentreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId" class="control-label"></label>
+                <select asp-for="PersonId" class="form-control" asp-items="ViewBag.PersonId"></select>
+                <span asp-validation-for="PersonId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkStarted" class="control-label"></label>
+                <input asp-for="WorkStarted" class="form-control" />
+                <span asp-validation-for="WorkStarted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkEnded" class="control-label"></label>
+                <input asp-for="WorkEnded" class="form-control" />
+                <span asp-validation-for="WorkEnded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeWorked" class="control-label"></label>
+                <input asp-for="TimeWorked" class="form-control" />
+                <span asp-validation-for="TimeWorked" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentPerHour" class="control-label"></label>
+                <input asp-for="PaymentPerHour" class="form-control" />
+                <span asp-validation-for="PaymentPerHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPayment" class="control-label"></label>
+                <input asp-for="TotalPayment" class="form-control" />
+                <span asp-validation-for="TotalPayment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkNote" class="control-label"></label>
+                <input asp-for="WorkNote" class="form-control" />
+                <span asp-validation-for="WorkNote" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Paid" /> @Html.DisplayNameFor(model => model.Paid)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountPaid" class="control-label"></label>
+                <input asp-for="AmountPaid" class="form-control" />
+                <span asp-validation-for="AmountPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DueToPay" class="control-label"></label>
+                <input asp-for="DueToPay" class="form-control" />
+                <span asp-validation-for="DueToPay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

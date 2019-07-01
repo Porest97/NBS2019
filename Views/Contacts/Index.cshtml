@@ -1,21 +1,18 @@
 ﻿@model IEnumerable<NBS2019.Models.HockeyContacts.Contact>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Contacts";
 }
 
 <h1>Kontakter</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<div>
-    <a asp-controller="Home" asp-action="SportContacts">Tillbaka till Kontakters Hemsida</a>
+<div class="row">
+    <div class="col-sm-2">
+        <a class="btn btn-success btn-sm" asp-action="Create">Create New Contact</a>
+    </div>
+    <div class="col-sm-10">
+        <a class="btn btn-success btn-sm" asp-controller="Home" asp-action="SportContacts">Back To Sport Contacts</a>
+    </div>
 </div>
-
-
-
-
 
 <table class="table">
     <thead>

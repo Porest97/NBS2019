@@ -1,0 +1,95 @@
+﻿@model IEnumerable<NBS2019.Models.PurchaseOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseOrderNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusinessCentre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedFE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descrition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeOnSite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KostPerHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalKost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobbScheduled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobbStarted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobbEnded)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessCentre.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedBy.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedFE.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOnSite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KostPerHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalKost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobbScheduled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobbStarted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobbEnded)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

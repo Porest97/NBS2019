@@ -1,0 +1,83 @@
+﻿@model IEnumerable<NBS2019.Models.SupportTicket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStampCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStampResolved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStampClosed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusinessCentre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedFE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FaultDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FaultReport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketLog)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStampCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStampResolved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStampClosed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessCentre.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedBy.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedFE.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaultDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaultReport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketLog)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

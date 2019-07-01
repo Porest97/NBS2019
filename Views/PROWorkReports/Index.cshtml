@@ -1,0 +1,107 @@
+﻿@model IEnumerable<NBS2019.Models.TestModels.PROWorkReport>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedPerson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkStarted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkEnded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeWorked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeePerHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueToPay)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedPerson.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedBy.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkStarted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkEnded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeWorked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeePerHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrder.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueToPay)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

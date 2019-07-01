@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using NBS2019.Data;
 using NBS2019.Models;
 
-namespace NBS2019.Controllers
+namespace NBS2019.Controllers.PeopleControllers
 {
     public class PeopleController : Controller
     {
