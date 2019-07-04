@@ -37,19 +37,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Company.Id)
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BillTo.Id)
+                @Html.DisplayFor(modelItem => item.BillTo.CompanyName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Qantity1)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Article.Id)
+                @Html.DisplayFor(modelItem => item.Article.ArticleDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ArticlePrice.Id)
+                @Html.DisplayFor(modelItem => item.ArticlePrice.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Amount)

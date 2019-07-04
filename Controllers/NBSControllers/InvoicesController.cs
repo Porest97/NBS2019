@@ -25,6 +25,15 @@ namespace NBS2019.Controllers.NBSControllers
             var applicationDbContext = _context.Invoice.Include(i => i.Article).Include(i => i.ArticlePrice).Include(i => i.BillTo).Include(i => i.Company);
             return View(await applicationDbContext.ToListAsync());
         }
+        //// GET: WorkReports HttpPost !
+        //[HttpPost]
+        //public IActionResult Index(Invoice invoice)
+        //{
+        //    var applicationContext = _context.Invoice.Include(i => i.Article).Include(i => i.ArticlePrice).Include(i => i.BillTo).Include(i => i.Company);
+        //    invoice.Amount = invoice.Qantity1 * invoice.ArticlePrice;
+            
+        //    return View(invoice);
+        //}
 
         // GET: Invoices/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -51,10 +60,10 @@ namespace NBS2019.Controllers.NBSControllers
         // GET: Invoices/Create
         public IActionResult Create()
         {
-            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "Id");
-            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Id");
-            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "Id");
-            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "Id");
+            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "ArticleDescription");
+            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Price");
+            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "CompanyName");
+            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "CompanyName");
             return View();
         }
 
@@ -71,10 +80,10 @@ namespace NBS2019.Controllers.NBSControllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "Id", invoice.ArticleId);
-            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Id", invoice.ArticleId1);
-            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "Id", invoice.CompanyId1);
-            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "Id", invoice.CompanyId);
+            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "ArticleDescription", invoice.ArticleId);
+            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Price", invoice.ArticleId1);
+            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "CompanyName", invoice.CompanyId1);
+            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "CompanyName", invoice.CompanyId);
             return View(invoice);
         }
 
@@ -91,10 +100,10 @@ namespace NBS2019.Controllers.NBSControllers
             {
                 return NotFound();
             }
-            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "Id", invoice.ArticleId);
-            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Id", invoice.ArticleId1);
-            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "Id", invoice.CompanyId1);
-            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "Id", invoice.CompanyId);
+            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "ArticleDescription", invoice.ArticleId);
+            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Price", invoice.ArticleId1);
+            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "CompanyName", invoice.CompanyId1);
+            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "CompanyName", invoice.CompanyId);
             return View(invoice);
         }
 
@@ -130,10 +139,10 @@ namespace NBS2019.Controllers.NBSControllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "Id", invoice.ArticleId);
-            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Id", invoice.ArticleId1);
-            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "Id", invoice.CompanyId1);
-            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "Id", invoice.CompanyId);
+            ViewData["ArticleId"] = new SelectList(_context.Article, "Id", "ArticleDescription", invoice.ArticleId);
+            ViewData["ArticleId1"] = new SelectList(_context.Article, "Id", "Price", invoice.ArticleId1);
+            ViewData["CompanyId1"] = new SelectList(_context.Company, "Id", "CompanyName", invoice.CompanyId1);
+            ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "CompanyName", invoice.CompanyId);
             return View(invoice);
         }
 

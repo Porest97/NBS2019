@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace NBS2019.Models.ViewModels
 {
-    public class PeopleViewModel
+    public class MeetingViewModel
     {
-        public List<Person> People { get; set; }
-
+        public List<Meeting> Meetings { get; set; }
     }
 }
